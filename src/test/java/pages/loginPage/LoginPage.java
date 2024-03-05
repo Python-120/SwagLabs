@@ -1,11 +1,7 @@
 package pages.loginPage;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import pages.basePageClass.BasePage;
 import pages.mainPage.MainPage;
 
@@ -19,6 +15,9 @@ private WebElement userNameField;
 private WebElement passwordField;
 @FindBy(id = "login-button")
 private WebElement loginButton;
+@FindBy(xpath = "//div[@class='error-message-container error']")
+private WebElement errorMassage;
+
 
 public LoginPage(){
     initElements(driver, this);
@@ -27,10 +26,10 @@ public LoginPage(){
         driver.get(LOGIN_PAGE_URL);
         return new LoginPage();
     }
-protected LoginPage clearField(WebElement webElement) {
+protected void clearField(WebElement webElement) {
     webElement.clear();
-    return this;
 }
+
     public LoginPage enterLogin(String user) {
         clearField(userNameField);
         new LoginPage()
@@ -50,6 +49,10 @@ protected LoginPage clearField(WebElement webElement) {
                 .loginButton
                 .click();
         return new MainPage();
-    }
+}
+
+public boolean displayedError() {
+    return errorMassage.isDisplayed();
+}
 
 }

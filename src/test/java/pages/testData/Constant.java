@@ -5,6 +5,13 @@ public abstract class Constant {
  * URL
  */
     public static final String LOGIN_PAGE_URL = "https://www.saucedemo.com/";
+    public static final String MAIN_PAGE_URL = "https://www.saucedemo.com/inventory.html";
+
+    public static final String NAME_A_TO_Z = "az";
+    public static final String NAME_Z_TO_A = "za";
+    public static final String PRICE_LOW_TO_HIGH = "lohi";
+    public static final String PRICE_HIGH_TO_LOW = "hilo";
+
     /**
      * LoginData
      */

@@ -8,22 +8,11 @@ import pages.basket.BasketPage;
 
 public class Header extends BasePage {
     @FindBy(id = "menu_button_container")
-    private WebElement burgerMenu;
+    public WebElement burgerMenu;
     @FindBy(id = "shopping_cart_container")
-    private WebElement basket;
+    public WebElement basket;
     public Header() {
         PageFactory.initElements(driver, this);
     }
-    public Header clickMenuButton() {
-        new Header()
-                .burgerMenu
-                .click();
-        return this;
-    }
-    public BasketPage clickBasketButton() {
-        new Header()
-                .basket
-                .click();
-        return new BasketPage();
-    }
+
 }
